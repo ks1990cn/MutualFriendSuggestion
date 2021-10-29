@@ -8,7 +8,6 @@ namespace MFSEngine
 {
     class Person
     {
-        public int uniqueNumber;
 
         public string location;
 

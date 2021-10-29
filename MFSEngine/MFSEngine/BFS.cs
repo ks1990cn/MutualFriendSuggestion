@@ -12,11 +12,10 @@ namespace MFSEngine
 
         //Adjacency Lists
         LinkedList<int>[] _adj;
-        //Adjacency Lists
-        LinkedList<int> mutualList;
+
         public BFS(int V)
         {
-            mutualList = new LinkedList<int>();
+
             _adj = new LinkedList<int>[V];
             for (int i = 0; i < _adj.Length; i++)
             {
@@ -32,8 +31,9 @@ namespace MFSEngine
             _adj[w].AddLast(v);
         }
 
+
         // Prints BFS traversal from a given source s
-        public void BFSTraversal(int s)
+        public void BFSTraversal(int s, Dictionary<int, Person> people)
         {
 
             // Mark all the vertices as not
@@ -49,7 +49,7 @@ namespace MFSEngine
             // visited and enqueue it
             visited[s] = true;
             queue.AddLast(s);
-            int currentSource = s;
+
             while (queue.Any())
             {
 
@@ -66,15 +66,16 @@ namespace MFSEngine
                 // has not been visited, then mark it
                 // visited and enqueue it
                 LinkedList<int> list = _adj[s];
-
                 foreach (var val in list)
                 {
-                    if (!visited[val])
+                    if(!visited[val])
                     {
                         visited[val] = true;
                         queue.AddLast(val);
                     }
+
                 }
+
             }
         }
 

@@ -8,24 +8,24 @@ namespace MFSEngine
     {
         static void Main(string[] args)
         {
-
-            HashSet<Person> people = new HashSet<Person>();
-            people.Add(new Person() { uniqueNumber = 1 });
-            people.Add(new Person() { uniqueNumber = 2 });
-            people.Add(new Person() { uniqueNumber = 3 });
-            people.Add(new Person() { uniqueNumber = 4 });
-            people.Add(new Person() { uniqueNumber = 5 });
-            people.Add(new Person() { uniqueNumber = 6 });
-            people.Add(new Person() { uniqueNumber = 7 });
+            Dictionary<int, Person> people = new Dictionary<int, Person>();
+            people.Add(1, new Person() { location = "Uttar Pradesh", school = "ABC" });
+            people.Add(2, new Person() { location = "Uttar Pradesh", school = "ABC" });
+            people.Add(3, new Person() { });
+            people.Add(4, new Person() { });
+            people.Add(5, new Person() { });
+            people.Add(6, new Person() { });
+            people.Add(7, new Person() { location = "Uttar Pradesh", school = "XYZ" });
+            people.Add(8, new Person() { });
 
             BFS breadthFirstSearch = new BFS(people.Count + 1);
-            var number1 = people.FirstOrDefault(a => a.uniqueNumber == 1).uniqueNumber;
-            var number2 = people.FirstOrDefault(a => a.uniqueNumber == 2).uniqueNumber;
-            var number3 = people.FirstOrDefault(a => a.uniqueNumber == 3).uniqueNumber;
-            var number4 = people.FirstOrDefault(a => a.uniqueNumber == 4).uniqueNumber;
-            var number5 = people.FirstOrDefault(a => a.uniqueNumber == 5).uniqueNumber;
-            var number6 = people.FirstOrDefault(a => a.uniqueNumber == 6).uniqueNumber;
-            var number7 = people.FirstOrDefault(a => a.uniqueNumber == 7).uniqueNumber;
+            var number1 = people.FirstOrDefault(a => a.Key == 1).Key;
+            var number2 = people.FirstOrDefault(a => a.Key == 2).Key;
+            var number3 = people.FirstOrDefault(a => a.Key == 3).Key;
+            var number4 = people.FirstOrDefault(a => a.Key == 4).Key;
+            var number5 = people.FirstOrDefault(a => a.Key == 5).Key;
+            var number6 = people.FirstOrDefault(a => a.Key == 6).Key;
+            var number7 = people.FirstOrDefault(a => a.Key == 7).Key;
 
             breadthFirstSearch.AddEdge(number1, number2);
             breadthFirstSearch.AddEdge(number1, number3);
@@ -33,7 +33,7 @@ namespace MFSEngine
             breadthFirstSearch.AddEdge(number4, number5);
             breadthFirstSearch.AddEdge(number4, number6);
             breadthFirstSearch.AddEdge(number5, number7);
-            breadthFirstSearch.BFSTraversal(number1);
+            breadthFirstSearch.BFSTraversal(number5, people);
         }
     }
 }
