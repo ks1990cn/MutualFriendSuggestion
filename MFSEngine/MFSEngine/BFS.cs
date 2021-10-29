@@ -13,10 +13,14 @@ namespace MFSEngine
         //Adjacency Lists
         LinkedList<int>[] _adj;
 
+        private LinkedList<int> list;
+        Person inititalPerson;
         public BFS(int V)
         {
-
+            inititalPerson = null;
+            
             _adj = new LinkedList<int>[V];
+            list = new LinkedList<int>();
             for (int i = 0; i < _adj.Length; i++)
             {
                 _adj[i] = new LinkedList<int>();
@@ -50,25 +54,31 @@ namespace MFSEngine
             visited[s] = true;
             queue.AddLast(s);
 
+            //Initial/Current Source
+            int initialSource = s;
+            inititalPerson=people[initialSource];
             while (queue.Any())
             {
 
                 // Dequeue a vertex from queue
                 // and print it
-
+                
                 s = queue.First();
                 //  if (queue.First() != currentSource)
                 Console.Write(s + " ");
                 queue.RemoveFirst();
 
+               
                 // Get all adjacent vertices of the
                 // dequeued vertex s. If a adjacent
                 // has not been visited, then mark it
                 // visited and enqueue it
-                LinkedList<int> list = _adj[s];
+                
+                list = _adj[s];
                 foreach (var val in list)
                 {
-                    if(!visited[val])
+                    var currentNetworkPerson = people[val];
+                    if (!visited[val] && Nodecomparision(inititalPerson,currentNetworkPerson))
                     {
                         visited[val] = true;
                         queue.AddLast(val);
@@ -77,6 +87,13 @@ namespace MFSEngine
                 }
 
             }
+        }
+
+        //Node Comparision
+        public bool Nodecomparision(Person sourcePerson, Person mutualPerson)
+        {
+            if (sourcePerson.location==mutualPerson.location) return true;
+            return false;
         }
 
     }
