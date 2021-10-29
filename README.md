@@ -1,4 +1,4 @@
-# Mutual Friend Suggestion
+# Mutual Friend Suggestion / Social media friend suggestion system
 Mutual friend suggestion
 
 Hey, this is project regarding Engine for mutual friend suggestion, which is based on undirected graph.
