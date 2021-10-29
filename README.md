@@ -11,3 +11,5 @@ Currently we are in very basic stage and we are regrously working on this repo s
 and we can also connect on skype / zoom / google meet for discussions / doubts.
 
 Our future goal is to create a website which gonna use this engine.
+
+Currently we are welcoming ideas regarding how to design this/ how should we handle large data / how to do load balance.
