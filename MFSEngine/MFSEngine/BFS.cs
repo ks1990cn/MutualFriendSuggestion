@@ -78,7 +78,6 @@ namespace MFSEngine
                 // and print it
 
                 s = queue.First();
-                //  if (queue.First() != currentSource)
                 //Console.Write(s + " ");
                 queue.RemoveFirst();
 
