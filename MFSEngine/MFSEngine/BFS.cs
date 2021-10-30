@@ -39,7 +39,7 @@ namespace MFSEngine
 
 
         // Prints BFS traversal from a given source s
-        public void BFSTraversal(int s, Dictionary<int, Person> people)
+        public void BFSTraversal(int s)
         {
 
             // Mark all the vertices as not
@@ -57,12 +57,12 @@ namespace MFSEngine
             //queue.AddLast(s);
 
             //Initial/Current Source
-            int initialSource = s;
-            inititalPerson = people[initialSource];
-            sourcePersonFriends = _adj[initialSource];
+
+
+            sourcePersonFriends = _adj[s];
             foreach (var val in sourcePersonFriends)
             {
-                var currentNetworkPerson = people[val];
+
                 if (!visited[val])
                 {
                     visited[val] = true;
@@ -90,7 +90,7 @@ namespace MFSEngine
                 list = _adj[s];
                 foreach (var val in list)
                 {
-                    var currentNetworkPerson = people[val];
+
                     if (!visited[val])
                     {
                         visited[val] = true;
@@ -105,7 +105,7 @@ namespace MFSEngine
         public void mutualFriendsList(int s, Dictionary<int, Person> people)
         {
 
-            BFSTraversal(s, people);
+            BFSTraversal(s);
             foreach (var item in mutualFriends)
             {
                 Console.Write(item + " ");
