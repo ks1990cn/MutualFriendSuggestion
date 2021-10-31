@@ -26,9 +26,9 @@ namespace MFSEngine
         {
 
             mutualFriends = new LinkedList<int>();
-            _adj = createGraph._adj;
+            _adj = createGraph != null ? createGraph._adj : throw new NullReferenceException();
             list = new LinkedList<int>();
-            _V = createGraph._V;
+            _V = createGraph != null ? createGraph._V : throw new NullReferenceException();
         }
         // Prints BFS traversal from a given source s
         public void BFSTraversal(int s)
