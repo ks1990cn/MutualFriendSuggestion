@@ -16,32 +16,23 @@ namespace MFSEngine
         private LinkedList<int> list;
         private LinkedList<int> sourcePersonFriends;
         private LinkedList<int> mutualFriends;
-        Person inititalPerson;
-        public BFS(int V)
+        public LinkedList<int> _mutualFriends
         {
-            inititalPerson = null;
+            get { return mutualFriends; }
+            set { mutualFriends = value; }
+        }
+
+        public BFS(CreateGraph createGraph)
+        {
+
             mutualFriends = new LinkedList<int>();
-            _adj = new LinkedList<int>[V];
+            _adj = createGraph._adj;
             list = new LinkedList<int>();
-            for (int i = 0; i < _adj.Length; i++)
-            {
-                _adj[i] = new LinkedList<int>();
-            }
-            _V = V;
+            _V = createGraph._V;
         }
-
-        // Function to add an edge into the graph
-        public void AddEdge(int v, int w)
-        {
-            _adj[v].AddLast(w);
-            _adj[w].AddLast(v);
-        }
-
-
         // Prints BFS traversal from a given source s
         public void BFSTraversal(int s)
         {
-
             // Mark all the vertices as not
             // visited(By default set as false)
             bool[] visited = new bool[_V];
@@ -54,11 +45,6 @@ namespace MFSEngine
             // Mark the current node as
             // visited and enqueue it
             visited[s] = true;
-            //queue.AddLast(s);
-
-            //Initial/Current Source
-
-
             sourcePersonFriends = _adj[s];
             foreach (var val in sourcePersonFriends)
             {
@@ -70,23 +56,17 @@ namespace MFSEngine
                 }
 
             }
-
             while (queue.Any())
             {
 
                 // Dequeue a vertex from queue
                 // and print it
-
                 s = queue.First();
-                //Console.Write(s + " ");
                 queue.RemoveFirst();
-
-
                 // Get all adjacent vertices of the
                 // dequeued vertex s. If a adjacent
                 // has not been visited, then mark it
                 // visited and enqueue it
-
                 list = _adj[s];
                 foreach (var val in list)
                 {
@@ -96,29 +76,8 @@ namespace MFSEngine
                         visited[val] = true;
                         mutualFriends.AddLast(val);
                     }
-
                 }
-
             }
         }
-
-        public void mutualFriendsList(int s, Dictionary<int, Person> people)
-        {
-
-            BFSTraversal(s);
-            foreach (var item in mutualFriends)
-            {
-                Console.Write(item + " ");
-            }
-
-        }
-
-        //Node Comparision
-        public bool Nodecomparision(Person sourcePerson, Person mutualPerson)
-        {
-            if (sourcePerson.location == mutualPerson.location) return true;
-            return false;
-        }
-
     }
 }
