@@ -21,10 +21,12 @@ namespace MFSEngine
             get { return mutualFriends; }
             set { mutualFriends = value; }
         }
-
+        ParallelOptions parallelOptions;
         public BFS(CreateGraph createGraph)
         {
 
+            parallelOptions = new ParallelOptions();
+            parallelOptions.MaxDegreeOfParallelism = 8;
             mutualFriends = new LinkedList<int>();
             _adj = createGraph != null ? createGraph._adj : throw new NullReferenceException();
             list = new LinkedList<int>();
@@ -46,16 +48,13 @@ namespace MFSEngine
             // visited and enqueue it
             visited[s] = true;
             sourcePersonFriends = _adj[s];
-            foreach (var val in sourcePersonFriends)
-            {
-
+            Parallel.ForEach(sourcePersonFriends,parallelOptions, val => {
                 if (!visited[val])
                 {
                     visited[val] = true;
                     queue.AddLast(val);
                 }
-
-            }
+            });
             while (queue.Any())
             {
 
@@ -68,15 +67,14 @@ namespace MFSEngine
                 // has not been visited, then mark it
                 // visited and enqueue it
                 list = _adj[s];
-                foreach (var val in list)
-                {
-
+                Parallel.ForEach(list,parallelOptions, val => {
                     if (!visited[val])
                     {
                         visited[val] = true;
                         mutualFriends.AddLast(val);
                     }
-                }
+                });
+
             }
         }
     }
