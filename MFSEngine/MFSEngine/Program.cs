@@ -39,8 +39,8 @@ namespace MFSEngine
              * 5->7
              */
             BFS bFS = new BFS(createGraph);
-            MFSOutput mFSOutput = new MFSOutput(bFS, number4, people);
-            mFSOutput.mutualFriendsList();
+            MFSOutput mFSOutput = new MFSOutput(bFS);
+            mFSOutput.mutualFriendsList(number4, people);
         }
     }
 }

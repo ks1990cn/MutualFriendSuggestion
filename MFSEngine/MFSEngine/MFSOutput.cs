@@ -9,23 +9,19 @@ namespace MFSEngine
     class MFSOutput
     {
         private LinkedList<int> mutualFriends;
-        private int source;
-        private Dictionary<int, Person> people;
         BFS _bfs;
-        public MFSOutput(BFS bFS,int s, Dictionary<int, Person> people)
+        public MFSOutput(BFS bFS)
         {
             
             mutualFriends = bFS!=null ? bFS._mutualFriends: throw new NullReferenceException();
             this._bfs = bFS;
-            this.source = s;
-            this.people = people;
         }
 
-        public void mutualFriendsList()
+        public void mutualFriendsList(int s, Dictionary<int, Person> people)
         {
 
-            _bfs.BFSTraversal(this.source);
-            foreach (var item in this.mutualFriends)
+            _bfs.BFSTraversal(s);
+            foreach (var item in mutualFriends)
             {
                 Console.Write(item + " ");
             }
