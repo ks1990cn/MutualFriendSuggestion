@@ -9,32 +9,20 @@ namespace MFSEngine
 {
     class BFS: ITraversal
     {
-        private int _V;
-        //Adjacency Lists
-        LinkedList<int>[] _adj;
-        private LinkedList<int> list;
-        private LinkedList<int> sourcePersonFriends;
-        private LinkedList<int> mutualFriends;
-        public LinkedList<int> _mutualFriends
-        {
-            get { return mutualFriends; }
-            set { mutualFriends = value; }
-        }
-
         public BFS()
         {
-            mutualFriends = new LinkedList<int>();
-            list = new LinkedList<int>();
         }
 
         // Prints BFS traversal from a given source s
-        public void Traverse(MFSGraph connectedGraph, int s)
+        public IEnumerable<int> Traverse(MFSGraph connectedGraph, int s)
         {
-            mutualFriends.Clear();
-            list.Clear();
-
-            _adj = connectedGraph?._adj ?? throw new NullReferenceException();
-            _V = connectedGraph?._V ?? throw new NullReferenceException();
+            //Adjacency Lists
+            
+            LinkedList<int>[] _adj = connectedGraph?._adj ?? throw new NullReferenceException();
+            int _V = connectedGraph?._V ?? throw new NullReferenceException();
+            
+            // var mutualFriends = new LinkedList<int>(); // maybe not needed 
+            LinkedList<int> list = new LinkedList<int>();
 
             // Mark all the vertices as not visited(By default set as false)
             bool[] visited = new bool[_V];
@@ -46,7 +34,8 @@ namespace MFSEngine
 
             // Mark the current node as visited and enqueue it
             visited[s] = true;
-            sourcePersonFriends = _adj[s];
+            
+            LinkedList<int> sourcePersonFriends = _adj[s];
             foreach (var val in sourcePersonFriends)
             {
 
@@ -67,11 +56,12 @@ namespace MFSEngine
                 list = _adj[s];
                 foreach (var val in list)
                 {
-
                     if (!visited[val])
                     {
                         visited[val] = true;
-                        mutualFriends.AddLast(val);
+
+                        // mutual friend candidate
+                        yield return val;
                     }
                 }
             }

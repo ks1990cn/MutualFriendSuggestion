@@ -9,23 +9,18 @@ namespace MFSEngine
 {
     class MFSOutput
     {
-        private LinkedList<int> mutualFriends;
-        BFS _bfs;
-        public MFSOutput(BFS bFS)
+        ITraversal _bfs;
+        public MFSOutput(ITraversal bFS)
         {
-            
-            mutualFriends = bFS!=null ? bFS._mutualFriends: throw new NullReferenceException();
             this._bfs = bFS;
         }
 
-        public void mutualFriendsList(MFSGraph connections,int searchItem)
+        public void mutualFriendsList(MFSGraph connections, int searchItem)
         {
-            _bfs.Traverse(connections,searchItem);
-            foreach (var item in mutualFriends)
+            foreach (var item in _bfs.Traverse(connections, searchItem))
             {
                 Console.Write(item + " ");
             }
-
         }
     }
 }

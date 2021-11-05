@@ -1,7 +1,8 @@
 
+using System.Collections.Generic;
 using MFSEngine.Models;
 
 public interface ITraversal
 {
-     void Traverse(MFSGraph g, int endPoint);
+     IEnumerable<int> Traverse(MFSGraph g, int endPoint);
 }
