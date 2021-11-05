@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MFSEngine.Models;
 
 namespace MFSEngine
 {
@@ -17,10 +18,9 @@ namespace MFSEngine
             this._bfs = bFS;
         }
 
-        public void mutualFriendsList(int s, Dictionary<int, Person> people)
+        public void mutualFriendsList(MFSGraph connections,int searchItem)
         {
-
-            _bfs.BFSTraversal(s);
+            _bfs.Traverse(connections,searchItem);
             foreach (var item in mutualFriends)
             {
                 Console.Write(item + " ");

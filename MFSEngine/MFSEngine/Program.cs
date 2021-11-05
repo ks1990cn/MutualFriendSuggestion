@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MFSEngine.Models;
 
 namespace MFSEngine
 {
@@ -26,21 +27,21 @@ namespace MFSEngine
             var number5 = people.FirstOrDefault(a => a.Key == 5).Key;
             var number6 = people.FirstOrDefault(a => a.Key == 6).Key;
             var number7 = people.FirstOrDefault(a => a.Key == 7).Key;
-            CreateGraph createGraph = new CreateGraph(people.Count + 1);
-            createGraph.AddEdge(number1, number2);
-            createGraph.AddEdge(number1, number3);
-            createGraph.AddEdge(number1, number4);
-            createGraph.AddEdge(number4, number5);
-            createGraph.AddEdge(number4, number6);
-            createGraph.AddEdge(number5, number7);
+            MFSGraph connections = new MFSGraph(people.Count + 1);
+            connections.AddEdge(number1, number2);
+            connections.AddEdge(number1, number3);
+            connections.AddEdge(number1, number4);
+            connections.AddEdge(number4, number5);
+            connections.AddEdge(number4, number6);
+            connections.AddEdge(number5, number7);
             /* These edges are joined to form a graph.
              * 1->2,1->3,1->4
              * 4->5,4->6
              * 5->7
              */
-            BFS bFS = new BFS(createGraph);
+            BFS bFS = new BFS();
             MFSOutput mFSOutput = new MFSOutput(bFS);
-            mFSOutput.mutualFriendsList(number4, people);
+            mFSOutput.mutualFriendsList(connections, number4);
         }
     }
 }

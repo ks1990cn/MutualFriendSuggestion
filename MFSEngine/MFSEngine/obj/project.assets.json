@@ -8,34 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Kshitij\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Personal\\Rough_Code\\MutualFriendSuggestion\\MFSEngine\\MFSEngine\\MFSEngine.csproj",
+      "projectUniqueName": "C:\\Users\\Kshitij\\Documents\\GitHub\\Main\\MutualFriendSuggestion\\MFSEngine\\MFSEngine\\MFSEngine.csproj",
       "projectName": "MFSEngine",
-      "projectPath": "C:\\Personal\\Rough_Code\\MutualFriendSuggestion\\MFSEngine\\MFSEngine\\MFSEngine.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Personal\\Rough_Code\\MutualFriendSuggestion\\MFSEngine\\MFSEngine\\obj\\",
+      "projectPath": "C:\\Users\\Kshitij\\Documents\\GitHub\\Main\\MutualFriendSuggestion\\MFSEngine\\MFSEngine\\MFSEngine.csproj",
+      "packagesPath": "C:\\Users\\Kshitij\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kshitij\\Documents\\GitHub\\Main\\MutualFriendSuggestion\\MFSEngine\\MFSEngine\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Kshitij\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -68,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

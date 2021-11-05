@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MFSEngine
+namespace MFSEngine.Models
 {
-    class CreateGraph
+    public class MFSGraph
     {
         private int v;
 
@@ -30,7 +30,7 @@ namespace MFSEngine
             adj[v].AddLast(w);
             adj[w].AddLast(v);
         }
-        public CreateGraph(int v)
+        public MFSGraph(int v)
         {
             adj = new LinkedList<int>[v];
             list = new LinkedList<int>();
