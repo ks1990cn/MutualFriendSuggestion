@@ -30,3 +30,5 @@ MFSEngine/MFSEngine/obj/Debug/net5.0/MFSEngine.pdb
 MFSEngine/MFSEngine/obj/Debug/net5.0/ref/MFSEngine.dll
 MFSEngine/MFSEngine/bin/Debug/net5.0/MFSEngine.deps.json
 MFSEngine/MFSEngine/bin/Debug/net5.0/MFSEngine.runtimeconfig.json
+.vscode/launch.json
+.vscode/tasks.json
