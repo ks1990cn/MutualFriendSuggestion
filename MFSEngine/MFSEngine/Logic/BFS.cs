@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MFSEngine.Models;
 
-namespace MFSEngine
+namespace MFSEngine.Logic
 {
     class BFS: ITraversal
     {
