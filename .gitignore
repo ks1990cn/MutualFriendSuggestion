@@ -32,3 +32,5 @@ MFSEngine/MFSEngine/bin/Debug/net5.0/MFSEngine.deps.json
 MFSEngine/MFSEngine/bin/Debug/net5.0/MFSEngine.runtimeconfig.json
 .vscode/launch.json
 .vscode/tasks.json
+MutualFriendSuggestion/MFSEngine/DAL/bin
+MutualFriendSuggestion/MFSEngine/DAL/obj
