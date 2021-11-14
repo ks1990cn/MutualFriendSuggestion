@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using MFSEngine.Logic;
 using MFSEngine.Models;
-
+using DAL;
 namespace MFSEngine
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            MongoDataProvider mongoDataProvider = new MongoDataProvider("MFSDatabase");
+            mongoDataProvider.InsertRecord("peopleRecord",new Person() { Id =1, location = "Uttar Pradesh", school = "ABC" });
+            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 2, school = "ABC" });
+            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 3});
+            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 4, location = "Uttar Pradesh"});
+            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 5, location = "Uttar Pradesh", school = "xyz" });
+            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 6 });
+            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 7  });
+            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 8, location = "Uttar Pradesh", school = "ABC" });
             //Dictionary to create our cases
             Dictionary<int, Person> people = new Dictionary<int, Person>();
             people.Add(1, new Person() { location = "Uttar Pradesh", school = "ABC" });
