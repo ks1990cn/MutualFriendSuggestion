@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,10 @@ namespace DAL
             var collection = this.database.GetCollection<T>(Table);
             collection.InsertOne(record);
         }
-
+        public List<T> LoadRecords<T>(string Table,int limit)
+        {
+            var collection = this.database.GetCollection<T>(Table);
+            return collection.Find(new BsonDocument()).Skip(1).Limit(limit).ToList();
+        } 
     }
 }

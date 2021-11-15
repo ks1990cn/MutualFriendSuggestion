@@ -10,16 +10,24 @@ namespace MFSEngine
     {
         static void Main(string[] args)
         {
+            string databaseName = "MFSDatabase";
+            string tableName = "peopleRecord";
 
-            MongoDataProvider mongoDataProvider = new MongoDataProvider("MFSDatabase");
-            mongoDataProvider.InsertRecord("peopleRecord",new Person() { Id =1, location = "Uttar Pradesh", school = "ABC" });
-            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 2, school = "ABC" });
-            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 3});
-            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 4, location = "Uttar Pradesh"});
-            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 5, location = "Uttar Pradesh", school = "xyz" });
-            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 6 });
-            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 7  });
-            mongoDataProvider.InsertRecord("peopleRecord", new Person() { Id = 8, location = "Uttar Pradesh", school = "ABC" });
+            MongoDataProvider mongoDataProvider = new MongoDataProvider(databaseName);
+            //mongoDataProvider.InsertRecord(tableName, new Person() { Id =1, location = "Uttar Pradesh", school = "ABC" });
+            //mongoDataProvider.InsertRecord(tableName, new Person() { Id = 2, school = "ABC" });
+            //mongoDataProvider.InsertRecord(tableName, new Person() { Id = 3});
+            //mongoDataProvider.InsertRecord(tableName, new Person() { Id = 4, location = "Uttar Pradesh"});
+            //mongoDataProvider.InsertRecord(tableName, new Person() { Id = 5, location = "Uttar Pradesh", school = "xyz" });
+            //mongoDataProvider.InsertRecord(tableName, new Person() { Id = 6 });
+            //mongoDataProvider.InsertRecord(tableName, new Person() { Id = 7  });
+            //mongoDataProvider.InsertRecord(tableName, new Person() { Id = 8, location = "Uttar Pradesh", school = "ABC" });
+            var newList=mongoDataProvider.LoadRecords<Person>(tableName,3);
+
+            foreach (var item in newList)
+            {
+                Console.WriteLine(item.location + " " + item.Id+" "+item.school);
+            }
             //Dictionary to create our cases
             Dictionary<int, Person> people = new Dictionary<int, Person>();
             people.Add(1, new Person() { location = "Uttar Pradesh", school = "ABC" });
