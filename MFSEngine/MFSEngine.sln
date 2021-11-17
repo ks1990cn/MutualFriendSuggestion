@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MFSEngine", "MFSEngine\MFSEngine.csproj", "{5915AF1B-02B2-4E0F-8FE1-75058E2ED511}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{64FDFDDE-4D9C-4C1A-8361-8E95186DF0FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{64FDFDDE-4D9C-4C1A-8361-8E95186DF0FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFSInputLoader", "MFSInputLoader\MFSInputLoader.csproj", "{C5F224EB-7B88-4CB6-A0BF-21E8B0772CAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{64FDFDDE-4D9C-4C1A-8361-8E95186DF0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64FDFDDE-4D9C-4C1A-8361-8E95186DF0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64FDFDDE-4D9C-4C1A-8361-8E95186DF0FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F224EB-7B88-4CB6-A0BF-21E8B0772CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F224EB-7B88-4CB6-A0BF-21E8B0772CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F224EB-7B88-4CB6-A0BF-21E8B0772CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F224EB-7B88-4CB6-A0BF-21E8B0772CAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

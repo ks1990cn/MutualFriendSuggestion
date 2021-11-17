@@ -20,6 +20,6 @@ namespace MFSEngine.Models
 
         public string workPlace;
 
-        public LinkedList<Person> friends;
+        public List<int> friendsId;
     }
 }

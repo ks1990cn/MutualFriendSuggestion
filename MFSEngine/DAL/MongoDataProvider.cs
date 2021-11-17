@@ -24,7 +24,13 @@ namespace DAL
         public List<T> LoadRecords<T>(string Table,int limit)
         {
             var collection = this.database.GetCollection<T>(Table);
-            return collection.Find(new BsonDocument()).Skip(1).Limit(limit).ToList();
+            return collection.Find(new BsonDocument()).Limit(limit).ToList();
         } 
+        public T LoadRecordsById<T>(string Table,int Id)
+        {
+            var collection = this.database.GetCollection<T>(Table);
+            var filter = Builders<T>.Filter.Eq("Id", Id);
+            return collection.Find(filter).First();
+        }
     }
 }
